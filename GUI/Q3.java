@@ -1,10 +1,4 @@
-package com.mycompany.clg_exp;
-
 import java.awt.*;
-import java.awt.FlowLayout;
-import java.lang.reflect.Array;
-import java.util.Vector;
-
 import javax.swing.*;
 
 public class Q3 {
@@ -35,27 +29,26 @@ public class Q3 {
         JTextField jt5 = new JTextField(20);
         f.add(jt5);
         JButton jb1 = new JButton("Search");
+        jb1.setBackground(Color.BLUE);
         f.add(jb1);
         JButton jb2 = new JButton("Replace");
+        jb2.setBackground(Color.BLUE);
         f.add(jb2);
 
         jb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // convert string to int array
                 String str = jt1.getText();
                 String str1 = jt2.getText();
-                int count = 0;
-                for (int i = 0; i < str.length(); i++) {
-                    if (str.charAt(i) == str1.charAt(0)) {
-                        int j = 0;
-                        for (j = 0; j < str1.length(); j++) {
-                            if (str.charAt(i + j) != str1.charAt(j)) {
-                                break;
-                            }
+                int count=0;
+                for(int i=0;i<str.length();i++){
+                    if(str.charAt(i)==str1.charAt(0)){
+                        int j=0;
+                        for(j=0;j<str1.length();j++){
+                            if(str1.charAt(j)!=str.charAt(i+j))
+                            break;
                         }
-                        if (j == str1.length()) {
-                            count++;
-                        }
+                        if(j==str1.length())
+                        count++;
                     }
                 }
                 jt3.setText(Integer.toString(count));
@@ -63,30 +56,10 @@ public class Q3 {
         });
         jb2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // Replace
                 String str = jt1.getText();
                 String str1 = jt2.getText();
                 String str2 = jt4.getText();
-                String ans = "";
-                for (int i = 0; i < str.length(); i++) {
-                    if (str.charAt(i) == str1.charAt(0)) {
-                        int j = 0;
-                        for (j = 0; j < str1.length(); j++) {
-                            if (str.charAt(i + j) != str1.charAt(j)) {
-                                break;
-                            }
-                        }
-                        if (j == str1.length()) {
-                            ans += str2;
-                            i += j - 1;
-                        } else {
-                            ans += str.charAt(i);
-                        }
-                    } else {
-                        ans += str.charAt(i);
-                    }
-                }
-                jt5.setText(ans);
+                jt5.setText(str.replace(str1,str2));
             }
         });
 

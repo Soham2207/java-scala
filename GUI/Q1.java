@@ -1,14 +1,7 @@
-package com.mycompany.clg_exp;
-
 import java.awt.*;
-import java.awt.FlowLayout;
-import java.lang.reflect.Array;
-import java.util.Vector;
-
 import javax.swing.*;
 
 public class Q1 {
-
     public static void main(String[] args) {
         JFrame f = new JFrame("Register");
         f.setVisible(true);
@@ -45,6 +38,5 @@ public class Q1 {
                 j1.setText(jb4.getText());
             }
         });
-
     }
 }

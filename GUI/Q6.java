@@ -1,12 +1,7 @@
-package com.mycompany.clg_exp;
-
 import java.awt.*;
-import java.awt.FlowLayout;
 import javax.swing.*;
 
 public class Q6 {
-    private static Integer intial = 0;
-
     public static void main(String[] args) {
         JFrame f = new JFrame("Swing Arithmetics");
         f.setVisible(true);
@@ -32,8 +27,8 @@ public class Q6 {
         f.add(jb6);
         jb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Integer ans = Integer.parseInt(jt1.getText()) + Integer.parseInt(jt2.getText());
-                jt3.setText(ans.toString());
+                int ans = Integer.parseInt(jt1.getText()) + Integer.parseInt(jt2.getText());
+                jt3.setText(Integer.toString(ans));
             }
         });
 

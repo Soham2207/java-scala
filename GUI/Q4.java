@@ -1,10 +1,4 @@
-package com.mycompany.clg_exp;
-
 import java.awt.*;
-import java.awt.FlowLayout;
-import java.lang.reflect.Array;
-import java.util.Vector;
-
 import javax.swing.*;
 
 public class Q4 {
@@ -31,14 +25,11 @@ public class Q4 {
 
         jb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // convert string to int array
-                String[] str = jt1.getText().split(" ");
-                String ans = "";
-                for (int i = 0; i < str.length; i++) {
-                    if (Integer.parseInt(str[i]) % 2 == 0) {
-                        ans += str[i] + " ";
-
-                    }
+                String str[] = jt1.getText().split(" ");
+                String ans="";
+                for(int i=0;i<str.length;i++){
+                    if(Integer.parseInt(str[i])%2==0)
+                    ans+=str[i]+" ";
                 }
                 jt2.setText(ans);
             }

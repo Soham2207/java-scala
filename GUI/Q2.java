@@ -1,10 +1,4 @@
-package com.mycompany.clg_exp;
-
 import java.awt.*;
-import java.awt.FlowLayout;
-import java.lang.reflect.Array;
-import java.util.Vector;
-
 import javax.swing.*;
 
 public class Q2 {
@@ -12,7 +6,7 @@ public class Q2 {
     public static void main(String[] args) {
         JFrame f = new JFrame("Register");
         f.setVisible(true);
-        f.setSize(500, 500);
+        f.setSize(500, 300);
         f.setLayout(new GridLayout(6, 2, 10, 10));
         JLabel j1 = new JLabel("Name");
         f.add(j1);
@@ -53,6 +47,5 @@ public class Q2 {
                 }
             }
         });
-
     }
 }
