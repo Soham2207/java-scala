@@ -5,7 +5,7 @@ class Account {
     String branch;
     private double bal = 0;
 
-    Account(String n , String br , int b){
+    Account(String n , String br , Double b){
         name = n;
         branch=br;
         bal = b;
@@ -24,7 +24,7 @@ class Account {
 class SavingsAccount extends Account{
     static final int interest = 10;
 
-    SavingsAccount(String n, String br, int b) {
+    SavingsAccount(String n, String br, Double b) {
         super(n, br, b);
     }
 
@@ -38,7 +38,7 @@ class SavingsAccount extends Account{
 class CurrentAccount extends Account{
     static final int ODLIMIT = 10000;
     int w_amt = 0;
-    CurrentAccount(String n, String br, int b , int withdrawal_amt) {
+    CurrentAccount(String n, String br, Double b , int withdrawal_amt) {
         super(n, br, b);
         w_amt = withdrawal_amt;
     }
@@ -72,13 +72,12 @@ class Bank {
 
 class Q14 {
     public static void main(String[] args) {
-        CurrentAccount acc1 = new CurrentAccount("A", "x", 5000, 2000);
-        SavingsAccount acc2 = new SavingsAccount("B", "y", 8000);
-        List<Object> accounts = Arrays.asList(
-        acc1 , acc2
-        );
-        Bank bk = new Bank(accounts);
-        bk.browse();
+        SavingsAccount s = new SavingsAccount("A", "x", 5000.0);
+        CurrentAccount c = new CurrentAccount("B", "y", 10000.0, 11000);
+        List<Object> a = new ArrayList<Object>();
+        a.add(s);
+        a.add(c);
+        Bank b = new Bank(a);
+        b.browse();
     }
-
 }
